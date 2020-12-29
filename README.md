@@ -22,7 +22,31 @@ A set of 3,968 ("4K") genomes was downloaded from [GISAID](https://www.gisaid.or
 
 This file is too large to host here, so we provide a download link above.
 
-#### SARS-CoV-2 reference genome
+### other genomes
+
+These genomes are used as the off-target dataset: a primer (25-mer) is "not specific" to SARS-CoV-2 if it occurs in any of the below viral or bacterial genomes with up to 4 basepair mismatches, or in the human reference genome GRCh38 with up to 2 basepair mismatches.  At most one member of a candidate primer pair may be non-specific to SARS-CoV-2.
+
+All FASTA files have one sequence per line, with all non-ACGT characters converted to 'N'.
+
+[to do: add provenance for each file]
+
+#### 89 bacterial genomes
+
+Listed by the FDA [to do: where?]
+
+`genomes/non-sars-cov-2/fda-bacteria.fa.gz` (14MB gzipped, 49MB uncompressed)
+
+#### 42 influenza genomes
+
+`genomes/non-sars-cov-2/influenza.fa.gz` (22KB gzipped, 75KB uncompressed)
+
+#### 447 other human coronavirus genomes
+
+`genomes/non-sars-cov-2/other-human-coronavirus.fa.gz` (2.2MB gzipped, 13MB uncompressed)
+
+#### 321 other human virus genomes
+
+`genomes/non-sars-cov-2/other-human-virus.fa.gz` (1.1MB gzipped, 3.7MB uncompressed)
 
 ## Candidate primer pairs
 
