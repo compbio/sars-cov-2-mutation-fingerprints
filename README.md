@@ -73,8 +73,8 @@ Below, all coordinates are 1-based and given with respect to the SARS-CoV-2 refe
 |9|`amplicon length`|number of basepairs between last position of forward primer and first position of reverse primer
 |10|`forward GC content (%)`|fraction of GC base pairs in forward primer
 |11|`reverse GC content (%)`|fraction of GC base pairs in reverse primer
-|12|`forward specific`|Boolean (`true` or `false`) indicating whether forward primer excludes off-target datasets [todo: define specific]
-|13|`reverse specific`|Boolean (`true` or `false`) indicating whether reverse primer excludes off-target datasets [todo: define specific]
+|12|`forward specific`|Boolean (`true` or `false`) indicating whether forward primer is specific to SARS-CoV-2 (excludes off-target datasets; see definition above)
+|13|`reverse specific`|Boolean (`true` or `false`) indicating whether reverse primer is specific to SARS-CoV-2 (excludes off-target datasets; see definition above)
 |14|`amplicon entropy (bits)`|Shannon entropy of the distribution of amplicons sandwiched by this primer pair in the 4K genome dataset
 |15|`amplicon entropy per bp (bits)`|Shannon entropy of the distribution of amplicons sandwiched by this primer pair in the 4K genome dataset, divided by mean amplicon length
 
