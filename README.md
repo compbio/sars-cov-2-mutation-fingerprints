@@ -26,9 +26,13 @@ This file is too large to host here, so we provide a download link above.
 
 These genomes are used as the off-target dataset: a primer (25-mer) is "not specific" to SARS-CoV-2 if it occurs in any of the below viral or bacterial genomes with up to 4 basepair mismatches, or in the human reference genome GRCh38 with up to 2 basepair mismatches.  At most one member of a candidate primer pair may be non-specific to SARS-CoV-2.
 
-All FASTA files have one sequence per line, with all non-ACGT characters converted to 'N'.
+All FASTA files (except GRCh38) have one sequence per line, with all non-ACGT characters converted to 'N'.
 
 [to do: add provenance for each file]
+
+#### reference human genome GRCh38
+
+Hosted by UCSC: [link](https://hgdownload.cse.ucsc.edu/goldenpath/hg38/chromosomes/)
 
 #### 89 bacterial genomes
 
