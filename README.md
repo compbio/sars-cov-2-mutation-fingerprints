@@ -12,7 +12,7 @@ A set of 3,968 ("4K") genomes was downloaded from [GISAID](https://www.gisaid.or
 
 #### "4K" dataset -- 3,968 genomes downloaded from GISAID on April 9th, 2020
 
-`sars-cov-2-genomes/sars-cov-2_4K_2020-4-9.fa.gz` (15MB gzipped, 114MB uncompressed)
+`genomes/sars-cov-2/sars-cov-2_4K_2020-4-9.fa.gz` (15MB gzipped, 114MB uncompressed)
 
 #### "75K" dataset -- 75,681 genomes from GISAID as of September 23rd, 2020
 
