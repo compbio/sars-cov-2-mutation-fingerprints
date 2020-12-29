@@ -18,7 +18,7 @@ A set of 3,968 ("4K") genomes was downloaded from [GISAID](https://www.gisaid.or
 
 #### "75K" dataset -- 75,681 genomes from GISAID as of September 23rd, 2020
 
-[`sars-cov-2_75K_2020-9-23.fa.gz`](https://sars-cov-2-mutation-fingerprints.s3-us-east-2.amazonaws.com/sars-cov-2_75K-2020-9-23.fa.gz) -- download link (270MB gzipped, 2.2GB uncompressed)
+[`sars-cov-2_75K_2020-9-23.fa.gz`](https://sars-cov-2-mutation-fingerprints.s3.amazonaws.com/sars-cov-2_75K-2020-9-23.fa.gz) -- download link (270MB gzipped, 2.2GB uncompressed)
 
 This file is too large to host here, so we provide a download link above.
 
