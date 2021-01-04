@@ -2,27 +2,45 @@
 
 Datasets and tables for the publication "[Profiling SARS-CoV-2 mutation fingerprints that range from the viral pangenome to individual infection quasispecies](https://www.medrxiv.org/content/10.1101/2020.11.02.20224816v1)" by Billy T. Lau, Dmitri S. Pavlichin, Anna C. Hooker, Alison Almeda, Giwon Shin, Jiamin Chen, Malaya K. Sahoo, ChunHong Huang, Benjamin A. Pinsky, HoJoon Lee, and Hanlee P. Ji.
 
-## Genomes
+This repository hosts some of the smaller objects and result tables (cloning it takes about 60MB), while the larger objects are stored in an AWS S3 bucket, with download links provided below.
+
+* [Data sources](#Data-sources)
+  * [SARS-CoV-2 genomes](#Sars-cov-2-genomes)
+    * [Reference genome from GISAID](#Reference-genome-from-gisaid)
+    * [4K genomes](#4k-dataset)
+    * [75K genomes](#75k-dataset)
+  * [non-SARS-CoV-2 genomes](#Non-sars-cov-2-genomes)
+    * [Reference human genome GRCh38](#Reference-human-genome-grch38)
+    * [89 bacterial genomes](#89-bacterial-genomes)
+    * [42 influenza genomes](#42-influenza-genomes)
+    * [447 other human coronavirus genomes](#447-other-human-coronavirus-genomes)
+    * [321 other human virus genomes](#321-other-human-virus-genomes)
+* [Results](#Results)
+  * [Candidate primer pairs](#Candidate-primer-pairs)
+
+## Data sources
 
 A set of 3,968 ("4K") genomes was downloaded from [GISAID](https://www.gisaid.org/) on April 9th, 2020 -- the most recent available at the time we constructed candidate primer pairs. A larger set of 75,681 genomes ("75K") downloaded from GISAID on September 23rd, 2020, was later used for computational analysis of the SARS-CoV-2 mutation landscape. These datasets are available as FASTA files with one line per sequence, and where each non-ACGT character was replaced by 'N'. Some GISAID sequences included multiple white space characters within one line, which were removed to produce this file.
 
-### SARS-CoV-2
+### SARS-CoV-2 genomes
 
-#### reference genome from GISAID
+#### Reference genome from GISAID
 
 [`genomes/sars-cov-2/sars-cov-2_reference_EPI_ISL_402124.fa.gz`](https://raw.github.com/dmitrip/sars-cov-2-mutation-fingerprints/master/genomes/sars-cov-2/sars-cov-2_reference_EPI_ISL_402124.fa.gz) (8.8KB gzipped, 30KB compressed)
 
-#### "4K" dataset -- 3,968 genomes downloaded from GISAID on April 9th, 2020
+#### 4K dataset
+3,968 genomes downloaded from GISAID on April 9th, 2020
 
 [`genomes/sars-cov-2/sars-cov-2_4K_2020-4-9.fa.gz`](https://raw.github.com/dmitrip/sars-cov-2-mutation-fingerprints/master/genomes/sars-cov-2/sars-cov-2_4K_2020-4-9.fa.gz) (15MB gzipped, 114MB uncompressed)
 
-#### "75K" dataset -- 75,681 genomes from GISAID as of September 23rd, 2020
+#### 75K dataset
+75,681 genomes from GISAID as of September 23rd, 2020
 
 [`sars-cov-2_75K_2020-9-23.fa.gz`](https://sars-cov-2-mutation-fingerprints.s3.amazonaws.com/sars-cov-2_75K-2020-9-23.fa.gz) (270MB gzipped, 2.2GB uncompressed)
 
 This file is too large to host here, so we put it in an AWS S3 bucket and provide the download link above.
 
-### other genomes
+### Non-SARS-CoV-2 genomes
 
 These genomes are used as the off-target dataset: a primer (25-mer) is "not specific" to SARS-CoV-2 if it occurs in any of the below viral or bacterial genomes with up to 4 basepair mismatches, or in the human reference genome GRCh38 with up to 2 basepair mismatches.  At most one member of a candidate primer pair may be non-specific to SARS-CoV-2.
 
@@ -30,7 +48,7 @@ All FASTA files (except GRCh38) have one sequence per line, with all non-ACGT ch
 
 [to do: add provenance for each file]
 
-#### reference human genome GRCh38
+#### Reference human genome GRCh38
 
 Hosted by UCSC: [link](https://hgdownload.cse.ucsc.edu/goldenpath/hg38/chromosomes/).
 
@@ -52,7 +70,11 @@ Listed by the FDA [to do: where?]
 
 [`genomes/non-sars-cov-2/other-human-virus.fa.gz`](https://raw.github.com/dmitrip/sars-cov-2-mutation-fingerprints/master/genomes/non-sars-cov-2/other-human-virus.fa.gz) (1.1MB gzipped, 3.7MB uncompressed)
 
-## Candidate primer pairs
+## Results
+
+Below we describe the tables we generated and used in our publication.
+
+### Candidate primer pairs
 
 [`primer_pairs/candidate-primer-pairs_2020-4-9.csv.gz`](https://raw.github.com/dmitrip/sars-cov-2-mutation-fingerprints/master/primer_pairs/candidate-primer-pairs_2020-4-9.csv.gz) (1.3MB gzipped, 9.4MB uncompressed)
 
