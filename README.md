@@ -86,10 +86,10 @@ A csv file of the 67,478 candidate primer pairs we generated based on the 4K GIS
 |2|`reverse (5' to 3')`|reverse primer (printed from right to left with reverse complement)
 |3|`forward strand`|always `+`
 |4|`reverse strand`|always `-`
-|5|`forward start`|start of forward primer
-|6|`forward stop`|stop of forward primer
-|7|`reverse start`|start of reverse primer
-|8|`reverse stop`|stop of reverse primer
+|5|`forward start`|start of forward primer (in reference genome, 1-based)
+|6|`forward stop`|stop of forward primer (in reference genome, 1-based)
+|7|`reverse start`|start of reverse primer (in reference genome, 1-based)
+|8|`reverse stop`|stop of reverse primer (in reference genome, 1-based)
 |9|`amplicon length`|number of basepairs between last position of forward primer and first position of reverse primer
 |10|`forward GC content (%)`|fraction of GC base pairs in forward primer
 |11|`reverse GC content (%)`|fraction of GC base pairs in reverse primer
