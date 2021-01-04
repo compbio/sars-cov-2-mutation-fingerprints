@@ -10,17 +10,17 @@ A set of 3,968 ("4K") genomes was downloaded from [GISAID](https://www.gisaid.or
 
 #### reference genome from GISAID
 
-`genomes/sars-cov-2/sars-cov-2_reference_EPI_ISL_402124.fa.gz` (8.8KB gzipped, 30KB compressed)
+[`genomes/sars-cov-2/sars-cov-2_reference_EPI_ISL_402124.fa.gz`](https://raw.github.com/dmitrip/sars-cov-2-mutation-fingerprints/master/genomes/sars-cov-2/sars-cov-2_reference_EPI_ISL_402124.fa.gz) (8.8KB gzipped, 30KB compressed)
 
 #### "4K" dataset -- 3,968 genomes downloaded from GISAID on April 9th, 2020
 
-`genomes/sars-cov-2/sars-cov-2_4K_2020-4-9.fa.gz` (15MB gzipped, 114MB uncompressed)
+[`genomes/sars-cov-2/sars-cov-2_4K_2020-4-9.fa.gz`](https://raw.github.com/dmitrip/sars-cov-2-mutation-fingerprints/master/genomes/sars-cov-2/sars-cov-2_4K_2020-4-9.fa.gz) (15MB gzipped, 114MB uncompressed)
 
 #### "75K" dataset -- 75,681 genomes from GISAID as of September 23rd, 2020
 
-[`sars-cov-2_75K_2020-9-23.fa.gz`](https://sars-cov-2-mutation-fingerprints.s3.amazonaws.com/sars-cov-2_75K-2020-9-23.fa.gz) -- download link (270MB gzipped, 2.2GB uncompressed)
+[`sars-cov-2_75K_2020-9-23.fa.gz`](https://sars-cov-2-mutation-fingerprints.s3.amazonaws.com/sars-cov-2_75K-2020-9-23.fa.gz) (270MB gzipped, 2.2GB uncompressed)
 
-This file is too large to host here, so we provide a download link above.
+This file is too large to host here, so we put it in an AWS S3 bucket and provide the download link above.
 
 ### other genomes
 
@@ -32,29 +32,29 @@ All FASTA files (except GRCh38) have one sequence per line, with all non-ACGT ch
 
 #### reference human genome GRCh38
 
-Hosted by UCSC: [link](https://hgdownload.cse.ucsc.edu/goldenpath/hg38/chromosomes/)
+Hosted by UCSC: [link](https://hgdownload.cse.ucsc.edu/goldenpath/hg38/chromosomes/).
 
 #### 89 bacterial genomes
 
 Listed by the FDA [to do: where?]
 
-`genomes/non-sars-cov-2/fda-bacteria.fa.gz` (14MB gzipped, 49MB uncompressed)
+[`genomes/non-sars-cov-2/fda-bacteria.fa.gz`](https://raw.github.com/dmitrip/sars-cov-2-mutation-fingerprints/master/genomes/non-sars-cov-2/fda-bacteria.fa.gz) (14MB gzipped, 49MB uncompressed)
 
 #### 42 influenza genomes
 
-`genomes/non-sars-cov-2/influenza.fa.gz` (22KB gzipped, 75KB uncompressed)
+[`genomes/non-sars-cov-2/influenza.fa.gz`](https://raw.github.com/dmitrip/sars-cov-2-mutation-fingerprints/master/genomes/non-sars-cov-2/influenza.fa.gz) (22KB gzipped, 75KB uncompressed)
 
 #### 447 other human coronavirus genomes
 
-`genomes/non-sars-cov-2/other-human-coronavirus.fa.gz` (2.2MB gzipped, 13MB uncompressed)
+[`genomes/non-sars-cov-2/other-human-coronavirus.fa.gz`](https://raw.github.com/dmitrip/sars-cov-2-mutation-fingerprints/master/genomes/non-sars-cov-2/other-human-coronavirus.fa.gz) (2.2MB gzipped, 13MB uncompressed)
 
 #### 321 other human virus genomes
 
-`genomes/non-sars-cov-2/other-human-virus.fa.gz` (1.1MB gzipped, 3.7MB uncompressed)
+[`genomes/non-sars-cov-2/other-human-virus.fa.gz`](https://raw.github.com/dmitrip/sars-cov-2-mutation-fingerprints/master/genomes/non-sars-cov-2/other-human-virus.fa.gz) (1.1MB gzipped, 3.7MB uncompressed)
 
 ## Candidate primer pairs
 
-`primer_pairs/candidate-primer-pairs_2020-4-9.csv.gz` (1.3MB gzipped, 9.4MB uncompressed)
+[`primer_pairs/candidate-primer-pairs_2020-4-9.csv.gz`](https://raw.github.com/dmitrip/sars-cov-2-mutation-fingerprints/master/primer_pairs/candidate-primer-pairs_2020-4-9.csv.gz) (1.3MB gzipped, 9.4MB uncompressed)
 
 A csv file of the 67,478 candidate primer pairs we generated based on the 4K GISAID SARS-CoV-2 genome dataset.
 
