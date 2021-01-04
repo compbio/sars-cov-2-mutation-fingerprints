@@ -78,9 +78,7 @@ Below we describe the tables we generated and used in our publication.
 
 [`primer_pairs/candidate-primer-pairs_2020-4-9.csv.gz`](https://raw.github.com/dmitrip/sars-cov-2-mutation-fingerprints/master/primer_pairs/candidate-primer-pairs_2020-4-9.csv.gz) (1.3MB gzipped, 9.4MB uncompressed)
 
-A csv file of the 67,478 candidate primer pairs we generated based on the 4K GISAID SARS-CoV-2 genome dataset.
-
-Below, all coordinates are 1-based and given with respect to the SARS-CoV-2 reference genome.
+A csv file of the 67,478 candidate primer pairs we generated based on the 4K GISAID SARS-CoV-2 genome dataset.  All coordinates are 1-based and given with respect to the SARS-CoV-2 reference genome.
 
 |#|field name|description
 |-|:-|:-
