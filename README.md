@@ -98,3 +98,5 @@ A csv file of the 67,478 candidate primer pairs we generated based on the 4K GIS
 |14|`amplicon entropy (bits)`|Shannon entropy of the distribution of amplicons sandwiched by this primer pair in the 4K genome dataset
 |15|`amplicon entropy per bp (bits)`|Shannon entropy of the distribution of amplicons sandwiched by this primer pair in the 4K genome dataset, divided by mean amplicon length
 
+The plot below shows the coverage by candidate amplicons at each position in the SARS-CoV-2 reference genome.  This coverage at a position is the number of amplicons overlapping that position.
+![](plots/candidate_primer_pair_coverage.png)
