@@ -17,6 +17,7 @@ This repository hosts some of the smaller objects and result tables (cloning it 
     * [321 other human virus genomes](#321-other-human-virus-genomes)
 * [Results](#Results)
   * [Candidate primer pairs](#Candidate-primer-pairs)
+  * [k-mer counts for all SARS-CoV-2 genomes](#k-mer-counts-for-all-sars-cov-2-genomes)
 
 ## Data sources
 
@@ -100,3 +101,5 @@ A csv file of the 67,478 candidate primer pairs we generated based on the 4K GIS
 
 The plot below shows the coverage by candidate amplicons at each position in the SARS-CoV-2 reference genome.  This coverage at a position is the number of amplicons overlapping that position.
 ![](plots/candidate_primer_pair_coverage.png)
+
+### k-mer counts for all SARS-CoV-2 genomes
