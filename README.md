@@ -148,7 +148,7 @@ kmer_counts = np.fromfile('counts_25-mers_sars-cov-2_4K.bin', dtype=np.uint8).re
 
 [`kmer_counts/25-mers_sars-cov-2_reference_EPI_ISL_402124.bed.gz`](https://raw.github.com/dmitrip/sars-cov-2-mutation-fingerprints/master/kmer_counts/25-mers_sars-cov-2_reference_EPI_ISL_402124.bed.gz) (1.5MB gzipped, 224KB uncompressed)
 
-This is a [BED](https://en.wikipedia.org/wiki/BED_(file_format)) file listing the 25-mers in the reference genome (id `Wuhan/WIV04/EPI_ISL_402124`, 847-th genome in the 4K dataset) and their coordinates.  Firest few lines:
+This is a [BED](https://en.wikipedia.org/wiki/BED_(file_format)) file listing the 25-mers in the reference genome (id `Wuhan/WIV04/EPI_ISL_402124`, 847-th genome in the 4K dataset) and their coordinates (the second column is the start coordinate (0-based, inclusive), and the third column is the stop coordinate (0-based, non-inclusive), so coordinates `0, 25` correspond to the first 25 nucleotides).  Firest few lines:
 ```
 chr-SARS-CoV-2	0	25	ATTAAAGGTTTATACCTTCCCAGGT
 chr-SARS-CoV-2	1	26	TTAAAGGTTTATACCTTCCCAGGTA
