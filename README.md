@@ -103,3 +103,54 @@ The plot below shows the coverage by candidate amplicons at each position in the
 ![](plots/candidate_primer_pair_coverage.png)
 
 ### k-mer counts for all SARS-CoV-2 genomes
+
+#### Alphabetical list of all distinct 25-mers in the 4K genome dataset
+
+[`kmer_counts/25-mers_sars-cov-2_4K.txt.gz`](https://raw.github.com/dmitrip/sars-cov-2-mutation-fingerprints/master/kmer_counts/25-mers_sars-cov-2_4K.txt.gz) (445KB gzipped, 2.4MB uncompressed)
+
+There are 94,402 lines in this file, one for each distinct 25-mer.  First few lines:
+```
+AAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAC
+AAAAAAAAAAAAAAAAAAAAAAAAG
+```
+
+#### List of all genome ids in the 4K genome dataset
+
+[`kmer_counts/genome-ids_sars-cov-2_4K.txt.gz`](https://raw.github.com/dmitrip/sars-cov-2-mutation-fingerprints/master/kmer_counts/genome-ids_sars-cov-2_4K.txt.gz) (27KB gzipped, 121KB uncompressed)
+
+There are 3,968 lines in this file, one for each genome in the 4K dataset.  First few lines:
+```
+USA/WA-S88/EPI_ISL_417141
+USA/NY_2929/EPI_ISL_420793
+USA/WA-S89/EPI_ISL_417142
+```
+**Note**: the reference genome, with id `Wuhan/WIV04/EPI_ISL_402124` is on line 847.
+
+#### Matrix of 25-mer counts in each genome in the 4K genome dataset
+
+[`kmer_counts/counts_25-mers_sars-cov-2_4K.bin.gz`](https://raw.github.com/dmitrip/sars-cov-2-mutation-fingerprints/master/kmer_counts/counts_25-mers_sars-cov-2_4K.bin.gz) (2.3MB gzipped, 358MB uncompressed)
+
+This is a binary file storing a matrix with 3,968 rows (one for each genome in the 4K dataset) and 94,402 columns (one for each distinct 25-mer in the 4K dataset).  Let A be this matrix, then `A[i,j]` is the number of times the `j`-th k-mer appears in the `i`-th genome, where genomes are ordered in order of appearance in the 4K dataset (same order as the list of genome ids file, see above), and 25-mers are ordered alphabetically.  Each count is stored with an 8-bit unsigned integer (the max count is 52, which is below the maximum value of 255 representable by an 8-bit integer).
+
+To load this matrix into memory, first unzip the file, and then use the following commands in Julia, where below `kmer_counts[i,j]` is the count of the `j`-th k-mer in the `i`-th genome:
+```
+kmer_counts = zeros(UInt8, (3968, 94402));
+read!(filename, kmer_counts);
+```
+or in Python, where below `kmer_counts[j,i]` is the count of the `j`-th k-mer in the `i`-th genome (**Note**: the shape of `kmer_counts` in Python is `(94402, 3968)`, while in Julia it is `(3968, 94402)`).
+```
+import numpy as np
+kmer_counts = np.fromfile('counts_25-mers_sars-cov-2_4K.bin', dtype=np.uint8).reshape((94402, 3968))
+```
+
+#### List of 25-mers in the reference genome
+
+[`kmer_counts/25-mers_sars-cov-2_reference_EPI_ISL_402124.bed.gz`](https://raw.github.com/dmitrip/sars-cov-2-mutation-fingerprints/master/kmer_counts/25-mers_sars-cov-2_reference_EPI_ISL_402124.bed.gz) (1.5MB gzipped, 224KB uncompressed)
+
+This is a [BED](https://en.wikipedia.org/wiki/BED_(file_format)) file listing the 25-mers in the reference genome (id `Wuhan/WIV04/EPI_ISL_402124`, 847-th genome in the 4K dataset) and their coordinates.  Firest few lines:
+```
+chr-SARS-CoV-2	0	25	ATTAAAGGTTTATACCTTCCCAGGT
+chr-SARS-CoV-2	1	26	TTAAAGGTTTATACCTTCCCAGGTA
+chr-SARS-CoV-2	2	27	TAAAGGTTTATACCTTCCCAGGTAA
+```
