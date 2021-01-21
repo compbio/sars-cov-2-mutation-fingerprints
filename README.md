@@ -17,7 +17,10 @@ This repository hosts some of the smaller objects and result tables (cloning it 
     * [321 other human virus genomes](#321-other-human-virus-genomes)
 * [Results](#Results)
   * [Candidate primer pairs](#Candidate-primer-pairs)
-  * [k-mer counts for all SARS-CoV-2 genomes](#k-mer-counts-for-all-sars-cov-2-genomes)
+  * [k-mer counts for 4K SARS-CoV-2 genomes](#k-mer-counts-for-all-sars-cov-2-genomes)
+    * [All distinct 25-mers](#Alphabetical-list-of-all-distinct-25-mers-in-the-4k-genome-dataset)
+    * [Genome ids](#List-of-all-genome-ids-in-the-4k-genome-dataset)
+    * [Matrix of 25-mer counts (by genome and by k-mer)](#Matrix-of-25-mer-counts-in-each-genome-in-the-4k-genome-dataset)
 
 ## Data sources
 
