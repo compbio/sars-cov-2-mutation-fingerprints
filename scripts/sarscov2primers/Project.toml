@@ -1,0 +1,7 @@
+name = "sarscov2primers"
+uuid = "a369f29f-11f5-4761-89fd-723390dbfefc"
+authors = ["Dmitri Pavlichin <dmitripa@gmail.com>"]
+version = "0.1.0"
+
+[deps]
+ArgParse = "c7e460c6-2fb9-53a9-8c5b-16f535851c63"
