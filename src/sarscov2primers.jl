@@ -1,7 +1,6 @@
 module sarscov2primers
 
 import ArgParse
-#using CodecZlib
 
 const version_info = v"0.1.0"
 const prog_string = "makeprimers"
@@ -15,7 +14,6 @@ const arg_parse_settings = ArgParse.ArgParseSettings(
     prog = prog_string,
     description = join((version_string, description_string), "\n", "\n\n\n\n"),
     version = version_string,
-    #epilog = examples_string
 )
 
 
@@ -41,9 +39,6 @@ ArgParse.@add_arg_table! arg_parse_settings begin
         help = "output file"
         default = default_output_file
         arg_type = String
-    # "--verbose", "-v"
-    #     help = "verbose mode"
-    #     action = :store_true
     "--version", "-V"
         help = "display version number and exit"
         action = :show_version
@@ -175,8 +170,6 @@ function primerpairs(start::Integer, stop::Integer, max_amplicon_length::Integer
     end
 
     return primer_pairs
-
-    #for (start, f_kmer) in filter(kv->(kv[1] + k <= start), unique_conserved_primers_dict)
 end
 
 function writeprimerpairs(file::AbstractString, primer_pairs)
@@ -206,8 +199,6 @@ function main()
         error("missing input file: $(missing_source)")
     end
 
-    # read input files
-
     parsed_args = ArgParse.parse_args(arg_parse_settings)
 
     coordinates = parsed_args["coordinates"]
@@ -216,8 +207,6 @@ function main()
     max_gc_diff = parsed_args["max-gc-diff"]
     #verbose = parsed_args["verbose"]
     output_file = parsed_args["output-file"]
-
-    #@show coordinates, max_gc_diff, max_amplicon_length, output_file
 
     primer_pairs = primerpairs(coordinates[1], coordinates[2], max_amplicon_length, min_amplicon_length, max_gc_diff)
     writeprimerpairs(output_file, primer_pairs)
