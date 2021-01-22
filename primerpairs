@@ -1,10 +1,4 @@
-#!julia-1.5.3/bin/julia
+# set up julia path if we don't already have julia
+export PATH="julia-1.5.3/bin":$PATH
 
-# set DEPOT_PATH to local
-empty!(DEPOT_PATH)
-pushfirst!(DEPOT_PATH, "julia-1.5.3/depot")
-
-using sarscov2primers
-
-# do work
-sarscov2primers.main()
+./_primerpairs "$@"

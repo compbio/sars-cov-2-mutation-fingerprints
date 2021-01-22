@@ -7,7 +7,7 @@ const version_info = v"0.1.0"
 const prog_string = "makeprimers"
 const version_string = "$(prog_string) command line interface $(version_info), by Dmitri Pavlichin"
 const description_string = "Generate primer pairs for SARS-CoV-2 genomes"
-const default_output_file = "out.txt"
+const default_output_file = "out.csv"
 const ref_genome_length = 29891 # SARS-CoV-2 reference genome length
 const k = 25 # k-mer k
 
@@ -149,13 +149,10 @@ function primerpairs(start::Integer, stop::Integer, max_amplicon_length::Integer
     min_start = max(start - k - max_amplicon_length + 1, 0)
     max_stop = min(stop + max_amplicon_length, ref_genome_length)
 
-    #@show min_start, max_stop
-
     start_index = findleastupperboundinsortedvec(starts, min_start)
     stop_index = findgreatestlowerboundinsortedvec(starts, max_stop)
 
-    #@show start_index, stop_index
-
+    # TODO: iterate i_right using fact that must start inside target
     primer_pairs = []
     for i_left in start_index:stop_index
         for i_right in (i_left + 1):stop_index
@@ -164,6 +161,10 @@ function primerpairs(start::Integer, stop::Integer, max_amplicon_length::Integer
             amplicon_length = r_start - f_start - k
             amplicon_length < min_amplicon_length && continue
             amplicon_length > max_amplicon_length && break # sorted
+
+            # check that overlap target
+            ((r_start <= start) || (f_start + k - 1 >= stop)) && continue
+
             f_primer = f_primers[i_left]
             r_primer = f_primers[i_right]
             abs(gccontent(f_primer) - gccontent(r_primer)) > max_gc_diff && continue
@@ -193,7 +194,7 @@ function writeprimerpairs(file::AbstractString, primer_pairs)
             f_specific = canonical(f_primer) ∈ unique_conserved_specific_primers_canonical
             r_specific = canonical(r_primer) ∈ unique_conserved_specific_primers_canonical
             amplicon_length = pp.r_start - pp.f_start - k
-            println(io, join((f_primer, rc(r_primer), '+', '-', pp.f_start, pp.f_start + k - 1, pp.r_start, pp.r_start + k - 1, amplicon_length, gccontent(f_primer) / k, gccontent(r_primer) / k, f_specific, r_specific), ','))
+            println(io, join((f_primer, rc(r_primer), '+', '-', pp.f_start, pp.f_start + k - 1, pp.r_start, pp.r_start + k - 1, amplicon_length, gccontent(f_primer), gccontent(r_primer), f_specific, r_specific), ','))
         end
     end
     return

@@ -4,6 +4,8 @@ Datasets and tables for the publication "[Profiling SARS-CoV-2 mutation fingerpr
 
 This repository hosts some of the smaller objects and result tables (cloning it takes about 60MB), while the larger objects are stored in an AWS S3 bucket, with download links provided below. Please see the draft for a description of the datasets involved and the results computed.
 
+* [Setup](#Setup)
+* [Usage](#Usage)
 * [Data sources](#Data-sources)
   * [SARS-CoV-2 genomes](#Sars-cov-2-genomes)
     * [Reference genome from GISAID](#Reference-genome-from-gisaid)
@@ -24,6 +26,48 @@ This repository hosts some of the smaller objects and result tables (cloning it 
     * [All 25-mers in the reference genome (BED)](#List-of-25-mers-in-the-reference-genome)
     * [Unique, conserved 25-mers (BED)](#List-of-unique-conserved-25-mers)
     * [Unique, conserved, and specific 25-mers (BED)](#List-of-unique-conserved-specific-25-mers)
+
+## Setup
+
+Clone this repository, and `cd` into it. The provided script is written in the [Julia](https://julialang.org/) language. If you don't have Julia, then use `setup.sh` to set up a local copy inside this repository:
+```
+# if you don't have julia
+bash setup.sh
+```
+If you already have Julia, then you don't need to run `setup.sh` if you instead install from inside Julia:
+```
+# if you have julia
+import Pkg; Pkg.add(path="."); using sarscov2primers
+```
+
+## Usage
+
+The executable is `./primerpairs`.  Running `./primerpairs` without any arguments uses default parameter values and prints 88,612 candidate primer pairs (a copy of this [file](#Candidate-primer-pairs) is already included in this repository) to `out.csv`.
+
+For help and to see the default parameter values: 
+```bash
+./primerpairs --help # also prints default parameter values
+```
+
+For example, you can get all primer pairs whose amplicon overlaps any part of the region 20001-21000 in the SARS-CoV-2 genome, with max amplicon length 2500, min amplicon length 25, max GC content difference of 2 between the forward and reverse primers, and write the output to `out.csv`:
+
+```bash
+./primerpairs --coordinates 20001 21000 \
+              --max-amplicon-length 2500 \
+              --min-amplicon-length 25 \
+              --max-gc-diff 2 \
+              -o out.csv
+```
+
+The first few output primer pairs in `out.csv` are (see [below](#Candidate-primer-pairs) for an explanation of the output fields):
+```
+forward (5' to 3'),reverse (5' to 3'),forward strand,reverse strand,forward start,forward stop,reverse start,reverse stop,amplicon length,forward GC content (%),reverse GC content (%),forward specific,reverse specific
+TCTGCAATTAACAGGCCACAAATAG,TAGCTTGTTTGGGACCTACAGATGG,+,-,17692,17716,20077,20101,2360,10,12,false,true
+TCTGCAATTAACAGGCCACAAATAG,CTAGCTTGTTTGGGACCTACAGATG,+,-,17692,17716,20078,20102,2361,10,12,false,true
+CTGCAATTAACAGGCCACAAATAGG,TAGCTTGTTTGGGACCTACAGATGG,+,-,17693,17717,20077,20101,2359,11,12,false,true
+```
+
+**Note**: coordinates are 1-based (i.e. the first position has coordinate 1).
 
 ## Data sources
 

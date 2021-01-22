@@ -1,0 +1,9 @@
+#!/usr/bin/env julia
+
+# ignored if not using julia set up by `setup.sh`
+pushfirst!(DEPOT_PATH, "julia-1.5.3/depot")
+
+using sarscov2primers
+
+# do work
+sarscov2primers.main();
