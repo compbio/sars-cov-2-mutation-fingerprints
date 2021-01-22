@@ -22,7 +22,8 @@ This repository hosts some of the smaller objects and result tables (cloning it 
     * [Genome ids](#List-of-all-genome-ids-in-the-4k-genome-dataset)
     * [Matrix of 25-mer counts (by genome and by k-mer)](#Matrix-of-25-mer-counts-in-each-genome-in-the-4k-genome-dataset)
     * [All 25-mers in the reference genome (BED)](#List-of-25-mers-in-the-reference-genome)
-    * [All unique, conserved, and specific 25-mers (BED)](#List-of-unique-conserved-specific-25-mers)
+    * [Unique and conserved 25-mers (BED)](#List-of-unique-conserved-25-mers)
+    * [Unique, conserved, and specific 25-mers (BED)](#List-of-unique-conserved-specific-25-mers)
 
 ## Data sources
 
@@ -158,14 +159,24 @@ chrV	1	26	TTAAAGGTTTATACCTTCCCAGGTA
 chrV	2	27	TAAAGGTTTATACCTTCCCAGGTAA
 ```
 
+#### List of unique, conserved 25-mers
+[`kmer_counts/unique_conserved_25-mers_sars-cov-2_4K.bed.gz`](https://raw.github.com/dmitrip/sars-cov-2-mutation-fingerprints/master/kmer_counts/unique_conserved_25-mers_sars-cov-2_4K.bed.gz) (17KB gzipped, 83KB uncompressed)
+
+This is a BED file listing the 1,977 unique and conserved 25-mers in the reference genome.  This file is a subset of all 25-mers in the reference genome ([BED file](#List-of-25-mers-in-the-reference-genome)). Each 25-mer occurs exactly once in each genome in the 4K SARS-CoV-2 genome [dataset](#4k-dataset) (unique and conserved).
+
+First few lines:
+```
+chrV	761	786	GCAGTGGTGTTACCCGTGAACTCAT
+chrV	762	787	CAGTGGTGTTACCCGTGAACTCATG
+chrV	763	788	AGTGGTGTTACCCGTGAACTCATGC
+```
+
 #### List of unique, conserved, specific 25-mers
-[`kmer_counts/unique_specific_25-mers_sars-cov-2_4K.bed.gz`](https://raw.github.com/dmitrip/sars-cov-2-mutation-fingerprints/master/kmer_counts/unique_specific_25-mers_sars-cov-2_4K.bed.gz) (4.1KB gzipped, 18KB uncompressed)
+[`kmer_counts/unique_conserved_specific_25-mers_sars-cov-2_4K.bed.gz`](https://raw.github.com/dmitrip/sars-cov-2-mutation-fingerprints/master/kmer_counts/unique_conserved_specific_25-mers_sars-cov-2_4K.bed.gz) (4.1KB gzipped, 18KB uncompressed)
 
-This is a [BED](https://en.wikipedia.org/wiki/BED_(file_format)) file listing the unique, conserved, and specific 25-mers in the reference genome (id `Wuhan/WIV04/EPI_ISL_402124`, 847-th genome in the 4K dataset) and their coordinates (the second column is the start coordinate (0-based, inclusive), and the third column is the stop coordinate (0-based, non-inclusive), so coordinates `0, 25` correspond to the first 25 nucleotides).
+This is a BED file listing the 433 unique, conserved, and specific 25-mers in the reference genome. This file is a subset of the unique and conserved 25-mers in the reference genome ([BED file](#List-of-unique-conserved-25-mers)). Each 25-mer is unique and conserved and moreover does not occur in any of the non-SARS-CoV-2 [genomes](#Non-sars-cov-2-genomes), even allowing up to 4 mismatching basepairs for all genomes other than GRCh38, and up to 2 mismatching basepairs for GRCh38 (is specific to SARS-CoV-2).
 
-This file is a subset of the BED [file](#List-of-25-mers-in-the-reference-genome) listing all 25-mers in the reference genome. Each 25-mer occurs exactly once in each genome in the 4K SARS-CoV-2 genome [dataset](#4k-dataset) (unique and conserved), and does not occur in any of the non-SARS-CoV-2 [genomes](#Non-sars-cov-2-genomes), even allowing up to 4 mismatching basepairs for all genomes other than GRCh38, and up to 2 mismatching basepairs for GRCh38.
-
-Firest few lines:
+First few lines:
 ```
 chrV	761	786	GCAGTGGTGTTACCCGTGAACTCAT
 chrV	762	787	CAGTGGTGTTACCCGTGAACTCATG
