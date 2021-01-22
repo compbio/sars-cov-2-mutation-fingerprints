@@ -22,7 +22,7 @@ This repository hosts some of the smaller objects and result tables (cloning it 
     * [Genome ids (CSV)](#List-of-all-genome-ids-in-the-4k-genome-dataset)
     * [Matrix of 25-mer counts, by genome and by k-mer (binary uint8 element type)](#Matrix-of-25-mer-counts-in-each-genome-in-the-4k-genome-dataset)
     * [All 25-mers in the reference genome (BED)](#List-of-25-mers-in-the-reference-genome)
-    * [Unique and conserved 25-mers (BED)](#List-of-unique-conserved-25-mers)
+    * [Unique, conserved 25-mers (BED)](#List-of-unique-conserved-25-mers)
     * [Unique, conserved, and specific 25-mers (BED)](#List-of-unique-conserved-specific-25-mers)
 
 ## Data sources
