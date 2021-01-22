@@ -183,6 +183,7 @@ function writeprimerpairs(file::AbstractString, primer_pairs)
     unique_conserved_specific_primers_canonical::Set{String} = Set([canonical(kmer) for kmer in values(primersfrombed(unique_conserved_specific_kmers_file))])
 
     @info "found $(length(primer_pairs)) primer pairs"
+    @info "writing outout to $(file)"
 
     open(file, "w") do io
         println(io, "forward (5' to 3'),reverse (5' to 3'),forward strand,reverse strand,forward start,forward stop,reverse start,reverse stop,amplicon length,forward GC content (%),reverse GC content (%),forward specific,reverse specific")
