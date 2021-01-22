@@ -135,12 +135,12 @@ USA/WA-S89/EPI_ISL_417142
 This is a binary file storing a matrix with 3,968 rows (one for each genome in the 4K dataset) and 94,402 columns (one for each distinct 25-mer in the 4K dataset).  Let A be this matrix, then `A[i,j]` is the number of times the `j`-th k-mer appears in the `i`-th genome, where genomes are ordered in order of appearance in the 4K dataset (same order as the list of genome ids file, see above), and 25-mers are ordered alphabetically.  Each count is stored with an 8-bit unsigned integer (the max count is 52, which is below the maximum value of 255 representable by an 8-bit integer).
 
 To load this matrix into memory, first unzip the file, and then use the following commands in Julia, where below `kmer_counts[i,j]` is the count of the `j`-th k-mer in the `i`-th genome:
-```
+```julia
 kmer_counts = zeros(UInt8, (3968, 94402));
-read!(filename, kmer_counts);
+read!("counts_25-mers_sars-cov-2_4K.bin", kmer_counts);
 ```
 or in Python, where below `kmer_counts[j,i]` is the count of the `j`-th k-mer in the `i`-th genome (**Note**: the shape of `kmer_counts` in Python is `(94402, 3968)`, while in Julia it is `(3968, 94402)`).
-```
+```python
 import numpy as np
 kmer_counts = np.fromfile('counts_25-mers_sars-cov-2_4K.bin', dtype=np.uint8).reshape((94402, 3968))
 ```
