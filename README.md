@@ -42,14 +42,14 @@ import Pkg; Pkg.add(path="."); using sarscov2primers
 
 ## Usage
 
-The executable is `./primerpairs`.  Running `./primerpairs` without any arguments uses default parameter values and prints 88,612 candidate primer pairs (a copy of this [file](#Candidate-primer-pairs) is already included in this repository) to `out.csv`.
+The executable is `primerpairs`.  Running `./primerpairs` without any arguments uses default parameter values and prints 88,612 candidate primer pairs (a copy of this [file](#Candidate-primer-pairs) is already included in this repository) to `out.csv`.
 
 For help and to see the default parameter values: 
 ```bash
 ./primerpairs --help # also prints default parameter values
 ```
 
-For example, you can get all primer pairs whose amplicon overlaps any part of the region 20001-21000 in the SARS-CoV-2 genome, with max amplicon length 2500, min amplicon length 25, max GC content difference of 2 between the forward and reverse primers, and write the output to `out.csv`:
+For example, you can get all primer pairs whose amplicon overlaps any part of the region 20001-21000 in the SARS-CoV-2 reference genome, with max amplicon length 2500, min amplicon length 25, max GC content difference of 2 between the forward and reverse primers, and with output written to `out.csv`:
 
 ```bash
 ./primerpairs --coordinates 20001 21000 \
