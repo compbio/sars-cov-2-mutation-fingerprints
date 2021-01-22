@@ -181,11 +181,13 @@ This is a binary file storing a matrix with 3,968 rows (one for each genome in t
 
 To load this matrix into memory, first unzip the file, and then use the following commands in Julia, where below `kmer_counts[i,j]` is the count of the `j`-th k-mer in the `i`-th genome:
 ```julia
+# in Julia
 kmer_counts = zeros(UInt8, (3968, 94402));
 read!("counts_25-mers_sars-cov-2_4K.bin", kmer_counts);
 ```
 or in Python, where below `kmer_counts[j,i]` is the count of the `j`-th k-mer in the `i`-th genome (**Note**: the shape of `kmer_counts` in Python is `(94402, 3968)`, while in Julia it is `(3968, 94402)`).
 ```python
+# in Python
 import numpy as np
 kmer_counts = np.fromfile('counts_25-mers_sars-cov-2_4K.bin', dtype=np.uint8).reshape((94402, 3968))
 ```
