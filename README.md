@@ -34,7 +34,7 @@ Clone this repository, and `cd` into it. The provided script is written in the [
 # if you don't have julia
 bash setup.sh
 ```
-If you already have Julia, then you don't need to run `setup.sh` if you instead install from inside Julia:
+If you already have Julia, then you don't need to run `setup.sh`; you can instead install from inside Julia:
 ```
 # if you have julia
 import Pkg; Pkg.add(path="."); using sarscov2primers
