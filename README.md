@@ -83,7 +83,7 @@ Below we describe the tables we generated and used in our publication.
 
 [`primer_pairs/candidate-primer-pairs_2020-4-9.csv.gz`](https://raw.github.com/dmitrip/sars-cov-2-mutation-fingerprints/master/primer_pairs/candidate-primer-pairs_2020-4-9.csv.gz) (1.3MB gzipped, 9.4MB uncompressed)
 
-A csv file of the 67,478 candidate primer pairs we generated based on the 4K GISAID SARS-CoV-2 genome dataset.  All coordinates are 1-based and given with respect to the SARS-CoV-2 reference genome.
+A csv file of the 88,612 candidate primer pairs we generated based on the 4K GISAID SARS-CoV-2 genome dataset.  All coordinates are 1-based and given with respect to the SARS-CoV-2 reference genome.
 
 |#|field name|description
 |-|:-|:-
@@ -96,12 +96,10 @@ A csv file of the 67,478 candidate primer pairs we generated based on the 4K GIS
 |7|`reverse start`|start of reverse primer (in reference genome, 1-based)
 |8|`reverse stop`|stop of reverse primer (in reference genome, 1-based)
 |9|`amplicon length`|number of basepairs between last position of forward primer and first position of reverse primer
-|10|`forward GC content (%)`|fraction of GC base pairs in forward primer
-|11|`reverse GC content (%)`|fraction of GC base pairs in reverse primer
-|12|`forward specific`|Boolean (`true` or `false`) indicating whether forward primer is specific to SARS-CoV-2 (excludes off-target datasets; see definition above)
-|13|`reverse specific`|Boolean (`true` or `false`) indicating whether reverse primer is specific to SARS-CoV-2 (excludes off-target datasets; see definition above)
-|14|`amplicon entropy (bits)`|Shannon entropy of the distribution of amplicons sandwiched by this primer pair in the 4K genome dataset
-|15|`amplicon entropy per bp (bits)`|Shannon entropy of the distribution of amplicons sandwiched by this primer pair in the 4K genome dataset, divided by mean amplicon length
+|10|`forward GC content`|number of GC base pairs in forward primer
+|11|`reverse GC content`|number of GC base pairs in reverse primer
+|12|`forward specific`|Boolean (`true` or `false`) indicating whether forward primer is specific to SARS-CoV-2 (i.e. excludes off-target datasets; see definition above)
+|13|`reverse specific`|Boolean (`true` or `false`) indicating whether reverse primer is specific to SARS-CoV-2 (i.e. excludes off-target datasets; see definition above)
 
 The plot below shows the coverage by candidate amplicons at each position in the SARS-CoV-2 reference genome.  This coverage at a position is the number of amplicons overlapping that position.
 ![](plots/candidate_primer_pair_coverage.png)
