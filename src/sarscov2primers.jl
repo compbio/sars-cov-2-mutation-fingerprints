@@ -51,8 +51,8 @@ end
 
 # input files
 #const sarscov2_4K_genomes_file = "../../genomes/sars-cov-2/sars-cov-2_4K_2020-4-9.fa"
-const unique_conserved_kmers_file =          "../../kmer_counts/unique_conserved_25-mers_sars-cov-2_4K.bed"
-const unique_conserved_specific_kmers_file = "../../kmer_counts/unique_conserved_specific_25-mers_sars-cov-2_4K.bed"
+const unique_conserved_kmers_file =          "kmer_counts/unique_conserved_25-mers_sars-cov-2_4K.bed"
+const unique_conserved_specific_kmers_file = "kmer_counts/unique_conserved_specific_25-mers_sars-cov-2_4K.bed"
 const input_files = (unique_conserved_kmers_file, unique_conserved_specific_kmers_file)
 
 """Return misisng expected input files, possibly uncompressing them"""
