@@ -3,7 +3,7 @@ module sarscov2primers
 import ArgParse
 
 const version_info = v"0.1.0"
-const prog_string = "makeprimers"
+const prog_string = "primerpairs"
 const version_string = "$(prog_string) command line interface $(version_info), by Dmitri Pavlichin"
 const description_string = "Generate primer pairs for SARS-CoV-2 genomes"
 const default_output_file = "out.csv"
