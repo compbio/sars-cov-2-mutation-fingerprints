@@ -29,16 +29,18 @@ This repository hosts some of the smaller objects and result tables (cloning it 
 
 ## Setup
 
-Clone this repository, and `cd` into it. The provided script is written in the [Julia](https://julialang.org/) language. If you don't have Julia, then use `setup.sh` to set up a local copy inside this repository:
+Clone this repository, and `cd` into it.  The provided script is written in the [Julia](https://julialang.org/) language. If you don't have Julia, then use `setup.sh` to set up a local copy inside this repository:
 ```
 # if you don't have julia
 bash setup.sh
 ```
-If you already have Julia, then you don't need to run `setup.sh`, instead using:
+If you already have Julia, then instead of running `setup.sh` you can do:
 ```
 # if you have julia
 julia -e 'import Pkg; Pkg.add(path="."); using sarscov2primers;'
 ```
+
+Disk usage: cloning this repository uses about 65MB.  If you don't use Julia, then running `setup.sh` downloads a 100MB Julia tarball, which uses 500MB total when unpacked.
 
 ## Usage
 
