@@ -81,17 +81,17 @@ A set of 3,968 ("4K") genomes was downloaded from [GISAID](https://www.gisaid.or
 
 #### Reference genome from GISAID
 
-[`genomes/sars-cov-2/sars-cov-2_reference_EPI_ISL_402124.fa.gz`](https://raw.github.com/dmitrip/sars-cov-2-mutation-fingerprints/master/genomes/sars-cov-2/sars-cov-2_reference_EPI_ISL_402124.fa.gz) (8.8KB gzipped, 30KB compressed)
+The SARS-CoV-2 reference genome id is `EPI_ISL_402124`.
 
 #### 4K dataset
 Sequence id's of the 3,968 genomes downloaded from GISAID on April 9th, 2020
 
-[`genomes/sars-cov-2/genome-ids_sars-cov-2_4K.txt.gz`](https://raw.github.com/dmitrip/sars-cov-2-mutation-fingerprints/master/genomes/sars-cov-2/genome-ids_sars-cov-2_4K.txt.gz) (37KB gzipped, 194KB uncompressed)
+[`genomes/sars-cov-2/genome-ids_sars-cov-2_4K.txt.gz`](https://raw.github.com/compbio/sars-cov-2-mutation-fingerprints/main/genomes/sars-cov-2/genome-ids_sars-cov-2_4K.txt.gz) (37KB gzipped, 194KB uncompressed)
 
 #### 75K dataset
 Sequence id's of 75,681 genomes from GISAID as of September 23rd, 2020
 
-[`genomes/sars-cov-2/genome-ids_sars-cov-2_4K.txt.gz`](https://raw.github.com/dmitrip/sars-cov-2-mutation-fingerprints/master/genomes/sars-cov-2/genome-ids_sars-cov-2_75K.txt.gz) (617KB gzipped, 4.3MB uncompressed)
+[`genomes/sars-cov-2/genome-ids_sars-cov-2_4K.txt.gz`](https://raw.github.com/compbio/sars-cov-2-mutation-fingerprints/main/genomes/sars-cov-2/genome-ids_sars-cov-2_75K.txt.gz) (617KB gzipped, 4.3MB uncompressed)
 
 ### Non-SARS-CoV-2 genomes
 
